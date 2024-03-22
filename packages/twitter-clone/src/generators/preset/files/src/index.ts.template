@@ -1,1 +1,6 @@
-const variable = "<%= name %>";
+const baseName = "<%= name %>"
+const className = "<%= className %>"
+const propertyName = "<%= propertyName %>"
+const constantName = "<%= constantName %>"
+const fileName = "<%= fileName %>"
+const scope = "<%= scope %>"

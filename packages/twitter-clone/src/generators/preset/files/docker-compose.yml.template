@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  app:
+    container_name: <%= fileName %>
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+        NEXT_PUBLIC_SOCKET_URL: ${NEXT_PUBLIC_SOCKET_URL}
+    image: <%= fileName %>
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:

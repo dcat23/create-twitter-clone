@@ -1,12 +1,26 @@
 #!/usr/bin/env node
 
 import { createWorkspace } from 'create-nx-workspace';
+import { names } from '@nx/devkit';
+import yargs from 'yargs';
 
 async function main() {
-  const name = process.argv[2]; // TODO: use libraries like yargs or enquirer to set your workspace name
-  if (!name) {
-    throw new Error('Please provide a name for the workspace');
-  }
+  const parser = yargs(process.argv.slice(2))
+    .command('<name>', 'The name for the workspace')
+    .demandCommand(1, 'A name for the workspace is needed')
+    .option('scope', {
+      type: 'string',
+      describe: 'Your organization scope',
+    })
+    .help();
+
+  const argv = await parser.parse();
+  const name = names(argv._[0] as string).name;
+  const className = names(argv._[0] as string).className;
+  const propertyName = names(argv._[0] as string).propertyName;
+  const constantName = names(argv._[0] as string).constantName;
+  const scope = names(argv.scope ?? name).name;
+  const fileName = names(name).fileName;
 
   console.log(`Creating the workspace: ${name}`);
 
@@ -19,8 +33,13 @@ async function main() {
     `twitter-clone@${presetVersion}`,
     {
       name,
+      scope,
+      fileName,
+      className,
+      propertyName,
+      constantName,
       nxCloud: 'skip',
-      packageManager: 'npm',
+      packageManager: 'pnpm',
     }
   );
 
