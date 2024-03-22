@@ -1,7 +1,7 @@
 @use "./font-size" as *;
 
 @font-face {
-  font-family: "TwitterChirp";
+  font-family: "Twitter<%= className %>";
   src: url("/fonts/Chirp-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: "TwitterChirp";
+  font-family: "Twitter<%= className %>";
   src: url("/fonts/Chirp-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -33,7 +33,7 @@
 }
 
 @font-face {
-  font-family: "TwitterChirp";
+  font-family: "Twitter<%= className %>";
   src: url("/fonts/Chirp-Heavy.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
@@ -41,7 +41,7 @@
 }
 
 :root {
-  --ff-base: "TwitterChirp", sans-serif;
+  --ff-base: "Twitter<%= className %>", sans-serif;
   --ff-icons: "Material Icons", sans-serif;
 
   // font weights

@@ -7,5 +7,5 @@ const DefaultPage = () => {
 export default DefaultPage;
 
 export const metadata = {
-  title: "Chirp",
+  title: "<%= className %>",
 };

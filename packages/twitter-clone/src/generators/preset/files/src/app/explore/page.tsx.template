@@ -14,5 +14,5 @@ export default ExplorePage;
 
 export const metadata = {
   title: "Explore",
-  description: "The latest stories on Chirp - as told by Tweets.",
+  description: "The latest stories on <%= className %> - as told by Tweets.",
 };

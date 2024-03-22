@@ -1,6 +1,6 @@
 {
   "name": "twitter-clone",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "dependencies": {
     "@nx/devkit": "18.1.2",
     "tslib": "^2.3.0"

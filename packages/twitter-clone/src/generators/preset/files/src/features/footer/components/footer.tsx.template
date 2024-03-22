@@ -22,7 +22,7 @@ export const Footer = () => {
         More <ThreeDotsIcon />
       </button>
 
-      <span>© 2023 Chirp, Inc.</span>
+      <span>© 2023 <%= className %>, Inc.</span>
     </nav>
   );
 };

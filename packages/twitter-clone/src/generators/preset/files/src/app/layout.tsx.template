@@ -76,12 +76,12 @@ export default async function RootLayout({
 
 export const metadata = {
   title: {
-    default: "Chirp",
-    template: "%s / Chirp",
-    absolute: "Chirp",
+    default: "<%= className %>",
+    template: "%s / <%= className %>",
+    absolute: "<%= className %>",
   },
 
-  description: "Chirp is a social media platform for sharing your thoughts.",
+  description: "<%= className %> is a social media platform for sharing your thoughts.",
 
   icons: {
     icon: "/twitter-logo.svg",

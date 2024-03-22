@@ -51,7 +51,7 @@ export const SignInModal = ({ onClose }: { onClose: () => void }) => {
 
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Sign in to Chirp</h2>
+          <h2 className={styles.title}>Sign in to <%= className %></h2>
 
           <div className={styles.authButtons}>
             <AuthButton

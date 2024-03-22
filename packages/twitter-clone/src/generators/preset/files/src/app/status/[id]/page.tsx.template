@@ -20,7 +20,7 @@ export async function generateMetadata({
     };
 
   return {
-    title: `${tweet?.author?.name} on Chirp: "${decodeURIComponent(
+    title: `${tweet?.author?.name} on <%= className %>: "${decodeURIComponent(
       tweet?.text as string,
     )}"`,
     description: decodeURIComponent(tweet?.text as string),
