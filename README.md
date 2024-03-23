@@ -22,6 +22,12 @@ nx run-many --targets nx-release-publish
 cd tmp
 npx create-twitter-clone@latest test
 ```
+4. Testing
+
+```bash
+nx e2e twitter-clone-e2e
+```
+
 ## Plugins and code generators
 
 Add plugin
