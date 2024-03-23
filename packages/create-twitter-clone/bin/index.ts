@@ -16,9 +16,9 @@ async function main() {
 
   const argv = await parser.parse();
   const name = names(argv._[0] as string).name;
-  const className = names(argv._[0] as string).className;
-  const propertyName = names(argv._[0] as string).propertyName;
-  const constantName = names(argv._[0] as string).constantName;
+  const className = names(name).className;
+  const propertyName = names(name).propertyName;
+  const constantName = names(name).constantName;
   const scope = names(argv.scope ?? name).name;
   const fileName = names(name).fileName;
 
@@ -38,7 +38,7 @@ async function main() {
       className,
       propertyName,
       constantName,
-      nxCloud: 'skip',
+      nxCloud: 'github',
       packageManager: 'pnpm',
     }
   );

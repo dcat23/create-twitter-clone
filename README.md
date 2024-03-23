@@ -14,8 +14,6 @@ nx local-registry
 ```bash
 # open in new terminal window
 nx run-many --targets build
-```
-```bash
 nx run-many --targets nx-release-publish
 ```
 3. Create temporary project
@@ -28,17 +26,28 @@ npx create-twitter-clone@latest test
 
 Add plugin
 ```bash
-nx g @nx/plugin:plugin nextup-social --publishable
+nx g @nx/plugin:plugin twitter-clone --publishable
 ```
 
 Add create-x package
 ```bash
 # dont use this for now
-nx g @nx/plugin:create-package create-nextup-social --project nextup-social
+nx g @nx/plugin:create-package create-twitter-clone --project twitter-clone
+```
+
+## Helpful commands
+
+Reset pnpm store
+```bash
+pnpm store prune
+```
+
+Reset npx cache
+```bash
+rm -rf ~/.npm/_npx
 ```
 
 ## Resources
 
 - [Create Your Own create-react-app CLI](https://blog.nrwl.io/create-your-own-create-react-app-cli-d1bf13904e35)
-
 

@@ -1,7 +1,7 @@
 import {
   addDependenciesToPackageJson,
   addProjectConfiguration,
-  formatFiles,
+  // formatFiles,
   generateFiles,
   Tree
 } from '@nx/devkit';
@@ -26,7 +26,7 @@ export async function presetGenerator(
     },
   });
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
-  await formatFiles(tree);
+  // await formatFiles(tree);
   return addDependenciesToPackageJson(
     tree,
     {
