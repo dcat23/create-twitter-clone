@@ -50,5 +50,10 @@ Thumbs.db
 
 .turbo
 .vercel
+.nx/cache
+*.jpg
+*.png
+*.svg
+*.woff2
 *.css
 *.scss
