@@ -41,7 +41,7 @@ WORKDIR /app
 COPY src/ src/
 COPY public/ public/
 COPY prisma/schema.prisma prisma/
-COPY next.config.js postcss.config.js.template tailwind.config.js.template tsconfig.json reset.d.ts.template ./
+COPY next.config.js postcss.config.js tailwind.config.js tsconfig.json reset.d.ts ./
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package.json ./package.json
@@ -51,7 +51,7 @@ COPY --from=deps /app/pnpm-lock.yaml ./pnpm-lock.yaml
 RUN npx prisma generate
 
 # Build application
-RUN pnpm build
+RUN pnpm next build
 
 # Production image
 FROM base as prod

@@ -28,7 +28,6 @@ async function main() {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const presetVersion = require('../package.json').version;
 
-  // TODO: update below to customize the workspace
   const { directory } = await createWorkspace(
     `twitter-clone@${presetVersion}`,
     {
